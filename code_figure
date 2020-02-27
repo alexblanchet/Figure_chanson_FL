@@ -1,0 +1,12 @@
+y <- c(rnorm(1000, 1, 1), -12, rnorm(200, 1, 1)) # Créer les données
+ycolor <- ifelse(y == -12, 1, 0) # Identifier l'outlier
+
+# Figure
+plot(y,
+     main = "Réaction face à la chanson de Félix Leclerc",
+     ylab = "Opinion sur le caractère approprié de la chanson",
+     xlab = "Ènième personne à écouter la chanson",
+     ylim = c(-15,5),
+     col = c("black", "red")[as.factor(ycolor)],
+     cex = c(1, 4)[as.factor(ycolor)],
+     pch = c(1, 19)[as.factor(ycolor)])
